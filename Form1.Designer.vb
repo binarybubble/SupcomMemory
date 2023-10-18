@@ -26,16 +26,19 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.lblRAM = New System.Windows.Forms.Label()
         Me.lblRamUsage = New System.Windows.Forms.Label()
-        Me.TxtBeschrieb = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LblError = New System.Windows.Forms.Label()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ContextMenuStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblRAM
         '
         Me.lblRAM.AutoSize = True
-        Me.lblRAM.Location = New System.Drawing.Point(84, 47)
+        Me.lblRAM.Location = New System.Drawing.Point(37, 9)
         Me.lblRAM.Name = "lblRAM"
         Me.lblRAM.Size = New System.Drawing.Size(19, 13)
         Me.lblRAM.TabIndex = 1
@@ -44,36 +47,15 @@ Partial Class Form1
         'lblRamUsage
         '
         Me.lblRamUsage.AutoSize = True
-        Me.lblRamUsage.Location = New System.Drawing.Point(12, 47)
+        Me.lblRamUsage.Location = New System.Drawing.Point(2, 9)
         Me.lblRamUsage.Name = "lblRamUsage"
-        Me.lblRamUsage.Size = New System.Drawing.Size(66, 13)
+        Me.lblRamUsage.Size = New System.Drawing.Size(34, 13)
         Me.lblRamUsage.TabIndex = 3
-        Me.lblRamUsage.Text = "Ram Usage:"
-        '
-        'TxtBeschrieb
-        '
-        Me.TxtBeschrieb.BackColor = System.Drawing.SystemColors.Control
-        Me.TxtBeschrieb.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtBeschrieb.Enabled = False
-        Me.TxtBeschrieb.Location = New System.Drawing.Point(12, 12)
-        Me.TxtBeschrieb.Multiline = True
-        Me.TxtBeschrieb.Name = "TxtBeschrieb"
-        Me.TxtBeschrieb.Size = New System.Drawing.Size(130, 32)
-        Me.TxtBeschrieb.TabIndex = 5
-        Me.TxtBeschrieb.Text = "Show RAM usage SupremeCommander.exe"
+        Me.lblRamUsage.Text = "RAM:"
         '
         'Timer1
         '
         Me.Timer1.Interval = 1000
-        '
-        'LblError
-        '
-        Me.LblError.AutoSize = True
-        Me.LblError.Location = New System.Drawing.Point(12, 82)
-        Me.LblError.Name = "LblError"
-        Me.LblError.Size = New System.Drawing.Size(10, 13)
-        Me.LblError.TabIndex = 7
-        Me.LblError.Text = "."
         '
         'NotifyIcon
         '
@@ -81,27 +63,56 @@ Partial Class Form1
         Me.NotifyIcon.Text = "NotifyIcon"
         Me.NotifyIcon.Visible = True
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.ShowImageMargin = False
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(79, 26)
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(78, 22)
+        Me.CloseToolStripMenuItem.Text = "Close"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox1.Controls.Add(Me.lblRAM)
+        Me.GroupBox1.Controls.Add(Me.lblRamUsage)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(100, 31)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(217, 107)
-        Me.Controls.Add(Me.LblError)
-        Me.Controls.Add(Me.TxtBeschrieb)
-        Me.Controls.Add(Me.lblRamUsage)
-        Me.Controls.Add(Me.lblRAM)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(124, 59)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
+        Me.Opacity = 0.6R
         Me.Text = "SC_RAM"
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblRAM As Label
     Friend WithEvents lblRamUsage As Label
-    Friend WithEvents TxtBeschrieb As TextBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents LblError As Label
     Friend WithEvents NotifyIcon As NotifyIcon
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
